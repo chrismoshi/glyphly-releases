@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Glyphly — Mandarin screen OCR and vocabulary learning for Windows</title>
+<meta name="description" content="Glyphly is a local-first Windows app for Mandarin learners. Capture text from your screen, read it with on-device OCR, look up words, save vocabulary, and review with spaced repetition.">
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<meta property="og:title" content="Glyphly — Mandarin screen OCR for Windows">
+<meta property="og:description" content="Turn Mandarin text on your screen into language learning. Local-first, on-device OCR, spaced-repetition review.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chrismoshi.github.io/glyphly-releases/">
+<meta property="og:image" content="https://chrismoshi.github.io/glyphly-releases/assets/glyphly.png">
+<style>
+  :root {
+    --bg: #fbfaf9;
+    --surface: #ffffff;
+    --sunken: #f4f2f0;
+    --border: #e5e1dd;
+    --text: #1c1917;
+    --text-2: #57534e;
+    --muted: #8a827b;
+    --accent: #b4451f;
+    --accent-soft: #fdf1eb;
+    --shadow: 0 1px 2px rgba(28, 25, 23, .05), 0 8px 24px rgba(28, 25, 23, .05);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #16140f;
+      --surface: #201d18;
+      --sunken: #1a1712;
+      --border: #332e27;
+      --text: #f5f1ec;
+      --text-2: #b8b0a6;
+      --muted: #877f75;
+      --accent: #f08b5c;
+      --accent-soft: #2b1d15;
+      --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .25);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #16140f; --surface: #201d18; --sunken: #1a1712; --border: #332e27;
+    --text: #f5f1ec; --text-2: #b8b0a6; --muted: #877f75;
+    --accent: #f08b5c; --accent-soft: #2b1d15;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25);
+  }
+  :root[data-theme="light"] {
+    --bg: #fbfaf9; --surface: #ffffff; --sunken: #f4f2f0; --border: #e5e1dd;
+    --text: #1c1917; --text-2: #57534e; --muted: #8a827b;
+    --accent: #b4451f; --accent-soft: #fdf1eb;
+    --shadow: 0 1px 2px rgba(28,25,23,.05), 0 8px 24px rgba(28,25,23,.05);
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.65 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  img { max-width: 100%; height: auto; }
+
+  .wrap { max-width: 940px; margin: 0 auto; padding: 0 20px; }
+  section { padding: 56px 0; border-top: 1px solid var(--border); }
+  section:first-of-type { border-top: none; }
+  h2 {
+    font-size: 13px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+    color: var(--muted); margin: 0 0 24px;
+  }
+  h3 { font-size: 17px; font-weight: 600; margin: 0 0 6px; letter-spacing: -.01em; }
+  p { margin: 0 0 14px; color: var(--text-2); }
+  p.lead { color: var(--text); }
+
+  /* ---------- hero ---------- */
+  .hero { padding: 72px 0 60px; text-align: center; }
+  .hero img.logo {
+    width: 84px; height: 84px; border-radius: 20px; box-shadow: var(--shadow);
+  }
+  .hero h1 {
+    font-size: clamp(38px, 7vw, 58px); line-height: 1.05; letter-spacing: -.035em;
+    margin: 24px 0 0; font-weight: 700;
+  }
+  .hero .tagline {
+    font-size: clamp(18px, 2.6vw, 22px); color: var(--text); font-weight: 500;
+    margin: 14px auto 0; max-width: 30ch; line-height: 1.35;
+  }
+  .hero .sub { margin: 18px auto 0; max-width: 56ch; }
+  .badges {
+    display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-top: 22px;
+  }
+  .badge {
+    font-size: 12.5px; font-weight: 500; color: var(--text-2);
+    background: var(--sunken); border: 1px solid var(--border);
+    border-radius: 999px; padding: 4px 12px;
+  }
+  .cta { margin-top: 32px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; font-weight: 600; font-size: 15px; padding: 12px 26px;
+    border-radius: 10px; border: 1px solid transparent; transition: opacity .15s, background .15s;
+  }
+  .btn:hover { text-decoration: none; }
+  .btn-primary { background: var(--accent); color: #fff; box-shadow: var(--shadow); }
+  .btn-primary:hover { opacity: .9; }
+  .btn-ghost { background: var(--surface); color: var(--text); border-color: var(--border); }
+  .btn-ghost:hover { background: var(--sunken); }
+  .cta-note { font-size: 13.5px; color: var(--muted); margin: 16px 0 0; }
+
+  /* ---------- feature grid ---------- */
+  .grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+  .card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 14px; padding: 22px;
+  }
+  .card p { margin: 0; font-size: 14.5px; }
+  .step {
+    font-size: 12px; font-weight: 600; letter-spacing: .06em; color: var(--accent);
+    text-transform: uppercase; margin-bottom: 10px;
+  }
+
+  /* ---------- privacy strip ---------- */
+  .strip {
+    background: var(--accent-soft); border: 1px solid var(--border);
+    border-radius: 16px; padding: 30px 32px;
+  }
+  .strip h2 { color: var(--accent); }
+  .strip ul { margin: 0; padding-left: 20px; color: var(--text-2); font-size: 15px; }
+  .strip li { margin-bottom: 8px; }
+  .strip li:last-child { margin-bottom: 0; }
+
+  /* ---------- pricing ---------- */
+  .pricing { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); }
+  .plan {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 14px; padding: 24px; position: relative; display: flex; flex-direction: column;
+  }
+  .plan.featured { border-color: var(--accent); }
+  .plan .tag {
+    position: absolute; top: -10px; left: 24px; background: var(--accent); color: #fff;
+    font-size: 11px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase;
+    padding: 3px 10px; border-radius: 999px;
+  }
+  .plan .name { font-size: 14px; font-weight: 600; color: var(--text-2); }
+  .plan .price { font-size: 32px; font-weight: 700; letter-spacing: -.03em; margin: 8px 0 2px; }
+  .plan .price span { font-size: 15px; font-weight: 500; color: var(--muted); letter-spacing: 0; }
+  .plan .note { font-size: 13.5px; color: var(--muted); margin: 6px 0 0; }
+
+  ul.checks { list-style: none; margin: 0 0 20px; padding: 0; }
+  ul.checks li {
+    font-size: 15px; color: var(--text-2); padding-left: 26px; position: relative; margin-bottom: 9px;
+  }
+  ul.checks li::before {
+    content: ""; position: absolute; left: 6px; top: 8px; width: 6px; height: 10px;
+    border: solid var(--accent); border-width: 0 2px 2px 0; transform: rotate(45deg);
+  }
+
+  table.specs { width: 100%; border-collapse: collapse; font-size: 15px; }
+  table.specs th, table.specs td {
+    text-align: left; padding: 11px 0; border-bottom: 1px solid var(--border); vertical-align: top;
+  }
+  table.specs th { font-weight: 600; width: 42%; color: var(--text); }
+  table.specs td { color: var(--text-2); }
+  table.specs tr:last-child th, table.specs tr:last-child td { border-bottom: none; }
+
+  .callout {
+    background: var(--sunken); border: 1px solid var(--border); border-radius: 12px;
+    padding: 16px 18px; font-size: 14px; color: var(--text-2); margin-top: 18px;
+  }
+  .callout strong { color: var(--text); }
+
+  .two-col { display: grid; gap: 32px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+
+  footer {
+    border-top: 1px solid var(--border); padding: 36px 0 56px;
+    font-size: 14px; color: var(--muted); text-align: center;
+  }
+  footer nav { margin-bottom: 14px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+  footer p { color: var(--muted); font-size: 13px; margin: 6px 0 0; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="hero">
+    <img class="logo" src="assets/glyphly.png" alt="Glyphly">
+    <h1>Glyphly</h1>
+    <p class="tagline">Turn Mandarin text on your screen into language learning.</p>
+    <p class="sub">
+      Capture text from your screen, read it with on-device OCR, look up words
+      instantly, save vocabulary, and review what you learn — all on your own PC.
+    </p>
+    <div class="badges">
+      <span class="badge">Windows 10 &amp; 11</span>
+      <span class="badge">Mandarin Chinese</span>
+      <span class="badge">Local-first</span>
+      <span class="badge">Free to try</span>
+    </div>
+    <div class="cta">
+      <a class="btn btn-primary" href="https://github.com/chrismoshi/glyphly-releases/releases/latest">Download for Windows</a>
+      <a class="btn btn-ghost" href="#pricing">See pricing</a>
+    </div>
+    <p class="cta-note">Free to use with up to 150 saved words. No account required.</p>
+  </header>
+
+  <section id="how">
+    <h2>How it works</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="step">1 · Capture</div>
+        <h3>Select what you're reading</h3>
+        <p>Drag a region or press a global hotkey to grab Mandarin text from
+           study PDFs, reading apps, websites, or your own materials.</p>
+      </div>
+      <div class="card">
+        <div class="step">2 · Understand</div>
+        <h3>Read it, word by word</h3>
+        <p>On-device OCR recognises the characters and splits the line into
+           words, with pinyin and definitions for each one.</p>
+      </div>
+      <div class="card">
+        <div class="step">3 · Save</div>
+        <h3>Build a personal lexicon</h3>
+        <p>Keep the words that matter to you, together with the sentence you
+           first met them in. Your lexicon, on your machine.</p>
+      </div>
+      <div class="card">
+        <div class="step">4 · Review</div>
+        <h3>Make it stick</h3>
+        <p>Spaced-repetition review with FSRS scheduling brings each word back
+           right before you'd forget it.</p>
+      </div>
+    </div>
+    <div class="callout">
+      <strong>Optional sentence translation.</strong> Add your own DeepL API key
+      in Settings and Glyphly will translate whole sentences on request. It is
+      off until you turn it on, and it costs nothing extra — it uses your key,
+      not ours.
+    </div>
+  </section>
+
+  <section id="privacy">
+    <div class="strip">
+      <h2>Privacy-first by design</h2>
+      <ul>
+        <li>OCR, word segmentation, and dictionary lookup run on your device.</li>
+        <li>Screenshots and recognised text are never uploaded for OCR or lookup.</li>
+        <li>Saved words and review history stay in a local database — no account, no cloud sync.</li>
+        <li>Sentence translation is the one feature that sends text out, and only when you enable it.</li>
+        <li>After setup, capture, lookup, and review work with no internet connection.</li>
+      </ul>
+      <p style="margin:18px 0 0;font-size:14.5px;">
+        <a href="https://github.com/chrismoshi/glyphly-releases/blob/main/PRIVACY.md">Read the full Privacy Policy →</a>
+      </p>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <h2>Glyphly Pro</h2>
+    <div class="two-col" style="margin-bottom:28px;">
+      <div>
+        <h3>The core loop is free</h3>
+        <p>Capture, OCR, lookup, saving, and spaced-repetition review are all
+           free, with a cap of 150 saved words. Words you've already saved are
+           never locked, and your review history stays yours.</p>
+      </div>
+      <div>
+        <h3>Pro removes the cap</h3>
+        <ul class="checks">
+          <li>Unlimited saved words</li>
+          <li>Clipboard watch</li>
+          <li>File import</li>
+          <li>Sentence quiz</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pricing">
+      <div class="plan featured">
+        <span class="tag">Launch offer</span>
+        <div class="name">Founder Lifetime</div>
+        <div class="price">$89.99</div>
+        <p class="note">One-time payment. Limited early-supporter offer.</p>
+      </div>
+      <div class="plan">
+        <div class="name">Yearly</div>
+        <div class="price">$49.99 <span>/ year</span></div>
+        <p class="note">Best value if you're subscribing.</p>
+      </div>
+      <div class="plan">
+        <div class="name">Monthly</div>
+        <div class="price">$8.99 <span>/ month</span></div>
+        <p class="note">Cancel any time.</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <strong>How to buy.</strong> Open Glyphly and go to
+      <strong>Settings&nbsp;→&nbsp;License</strong> to choose a plan. Your license
+      key arrives by email — paste it into that same card and press Activate. One
+      key works on up to 3 devices, and Pro stays unlocked for 14 days offline.
+      Prices in USD; payments processed by Lemon Squeezy, our merchant of record.
+    </div>
+  </section>
+
+  <section id="requirements">
+    <h2>Requirements &amp; languages</h2>
+    <table class="specs">
+      <tr>
+        <th>Operating system</th>
+        <td>Windows 10 or Windows 11 (64-bit)</td>
+      </tr>
+      <tr>
+        <th>Disk space</th>
+        <td>At least 1&nbsp;GB for the app and its language engine</td>
+      </tr>
+      <tr>
+        <th>First run</th>
+        <td>Downloads the language engine once (about 300&nbsp;MB). After that the
+            core loop works offline.</td>
+      </tr>
+      <tr>
+        <th>Internet</th>
+        <td>Needed for setup, updates, and license activation only</td>
+      </tr>
+      <tr>
+        <th>Learning language</th>
+        <td>Mandarin Chinese. Japanese and Korean are planned, without a
+            committed date.</td>
+      </tr>
+      <tr>
+        <th>Explanation language</th>
+        <td>English, French, German, Spanish, or Portuguese</td>
+      </tr>
+      <tr>
+        <th>Updates</th>
+        <td>Glyphly checks for new versions and can install them for you</td>
+      </tr>
+    </table>
+    <div class="callout">
+      <strong>About the SmartScreen warning.</strong> Glyphly's installer is not
+      yet code-signed, so Windows may show a “Windows protected your PC” prompt.
+      Choose <strong>More info → Run anyway</strong>. Code signing is in progress;
+      until it's done, only download Glyphly from the official Releases page.
+    </div>
+  </section>
+
+  <section id="support">
+    <h2>Support</h2>
+    <p>Found a bug, or something not working the way this page describes? Open an
+       entry on the
+       <a href="https://github.com/chrismoshi/glyphly-releases/issues">issue tracker</a>
+       and it will be looked at.</p>
+    <p>For billing, license, and refund questions, see the
+       <a href="https://github.com/chrismoshi/glyphly-releases/blob/main/REFUND.md">Refund Policy</a>.</p>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <nav>
+      <a href="https://github.com/chrismoshi/glyphly-releases/releases/latest">Download</a>
+      <a href="https://github.com/chrismoshi/glyphly-releases/blob/main/PRIVACY.md">Privacy</a>
+      <a href="https://github.com/chrismoshi/glyphly-releases/blob/main/TERMS.md">Terms</a>
+      <a href="https://github.com/chrismoshi/glyphly-releases/blob/main/REFUND.md">Refunds</a>
+      <a href="https://github.com/chrismoshi/glyphly-releases">GitHub</a>
+    </nav>
+    <p>Chinese dictionary data from
+       <a href="https://www.mdbg.net/chinese/dictionary?page=cc-cedict">CC-CEDICT</a>,
+       © MDBG, licensed under
+       <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</p>
+    <p>Glyphly is a study tool for personal language learning. Use it only with
+       content you have the right to access.</p>
+  </div>
+</footer>
+
+</body>
+</html>
