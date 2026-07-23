@@ -18,71 +18,9 @@
 <meta name="twitter:title" content="Glyphly — screen OCR for CJK learners">
 <meta name="twitter:description" content="Turn the text on your screen into language learning. Local-first, on-device OCR, spaced-repetition review. Windows and Mandarin available today.">
 <meta name="twitter:image" content="https://chrismoshi.github.io/glyphly-releases/assets/social-card.png">
+<link rel="stylesheet" href="assets/site.css">
 <style>
-  /* Palette mirrors the app's design tokens (apps/desktop/src/index.css):
-     zinc neutrals + #2563eb accent, so the site, the icon, and the app agree. */
-  :root {
-    --bg: #f4f4f6;
-    --surface: #ffffff;
-    --sunken: #f0f0f2;
-    --border: #e4e4e7;
-    --text: #18181b;
-    --text-2: #71717a;
-    --muted: #a1a1aa;
-    --accent: #2563eb;
-    --accent-hover: #1d4ed8;
-    --accent-soft: #eff6ff;
-    --accent-border: #bfdbfe;
-    --accent-fg: #ffffff;
-    --shadow: 0 1px 2px rgba(24, 24, 27, .04), 0 8px 24px rgba(24, 24, 27, .06);
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #09090b;
-      --surface: #18181b;
-      --sunken: #131316;
-      --border: #27272a;
-      --text: #fafafa;
-      --text-2: #a1a1aa;
-      --muted: #71717a;
-      --accent: #60a5fa;
-      --accent-hover: #93c5fd;
-      --accent-soft: #11203f;
-      --accent-border: #1e3a8a;
-      --accent-fg: #09090b;
-      --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px rgba(0, 0, 0, .35);
-    }
-  }
-  :root[data-theme="dark"] {
-    --bg: #09090b; --surface: #18181b; --sunken: #131316; --border: #27272a;
-    --text: #fafafa; --text-2: #a1a1aa; --muted: #71717a;
-    --accent: #60a5fa; --accent-hover: #93c5fd;
-    --accent-soft: #11203f; --accent-border: #1e3a8a; --accent-fg: #09090b;
-    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.35);
-  }
-  :root[data-theme="light"] {
-    --bg: #f4f4f6; --surface: #ffffff; --sunken: #f0f0f2; --border: #e4e4e7;
-    --text: #18181b; --text-2: #71717a; --muted: #a1a1aa;
-    --accent: #2563eb; --accent-hover: #1d4ed8;
-    --accent-soft: #eff6ff; --accent-border: #bfdbfe; --accent-fg: #ffffff;
-    --shadow: 0 1px 2px rgba(24,24,27,.04), 0 8px 24px rgba(24,24,27,.06);
-  }
-
-  * { box-sizing: border-box; }
-  html { -webkit-text-size-adjust: 100%; }
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--text);
-    font: 16px/1.65 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
-  }
-  a { color: var(--accent); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  img { max-width: 100%; height: auto; }
-
-  .wrap { max-width: 940px; margin: 0 auto; padding: 0 20px; }
+  /* Tokens, base reset, .wrap and footer live in assets/site.css. */
   section { padding: 56px 0; border-top: 1px solid var(--border); }
   section:first-of-type { border-top: none; }
   h2 {
@@ -203,12 +141,6 @@
 
   .two-col { display: grid; gap: 32px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
 
-  footer {
-    border-top: 1px solid var(--border); padding: 36px 0 56px;
-    font-size: 14px; color: var(--muted); text-align: center;
-  }
-  footer nav { margin-bottom: 14px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
-  footer p { color: var(--muted); font-size: 13px; margin: 6px 0 0; }
 </style>
 </head>
 <body>
@@ -292,7 +224,7 @@
         <li>After setup, capture, lookup, and review work with no internet connection.</li>
       </ul>
       <p style="margin:18px 0 0;font-size:14.5px;">
-        <a href="https://github.com/chrismoshi/glyphly-releases/blob/main/PRIVACY.md">Read the full Privacy Policy →</a>
+        <a href="privacy.html">Read the full Privacy Policy →</a>
       </p>
     </div>
   </section>
@@ -422,7 +354,7 @@
        <a href="https://github.com/chrismoshi/glyphly-releases/issues">issue tracker</a>
        and it will be looked at.</p>
     <p>For billing, license, and refund questions, see the
-       <a href="https://github.com/chrismoshi/glyphly-releases/blob/main/REFUND.md">Refund Policy</a>.</p>
+       <a href="refund.html">Refund Policy</a>.</p>
   </section>
 
 </div>
@@ -431,9 +363,9 @@
   <div class="wrap">
     <nav>
       <a href="https://github.com/chrismoshi/glyphly-releases/releases/latest">Download</a>
-      <a href="https://github.com/chrismoshi/glyphly-releases/blob/main/PRIVACY.md">Privacy</a>
-      <a href="https://github.com/chrismoshi/glyphly-releases/blob/main/TERMS.md">Terms</a>
-      <a href="https://github.com/chrismoshi/glyphly-releases/blob/main/REFUND.md">Refunds</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="refund.html">Refunds</a>
       <a href="https://github.com/chrismoshi/glyphly-releases">GitHub</a>
     </nav>
     <p>Chinese dictionary data from

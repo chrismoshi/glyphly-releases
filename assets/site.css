@@ -1,0 +1,132 @@
+/* Glyphly product site — shared stylesheet.
+   Single source of truth for the palette and page furniture, linked by
+   index.html and the policy pages so they can never drift apart.
+   Palette mirrors the app's design tokens (apps/desktop/src/index.css):
+   zinc neutrals + #2563eb accent, so the site, the icon, and the app agree. */
+
+:root {
+  --bg: #f4f4f6;
+  --surface: #ffffff;
+  --sunken: #f0f0f2;
+  --border: #e4e4e7;
+  --text: #18181b;
+  --text-2: #71717a;
+  --muted: #a1a1aa;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --accent-soft: #eff6ff;
+  --accent-border: #bfdbfe;
+  --accent-fg: #ffffff;
+  --shadow: 0 1px 2px rgba(24, 24, 27, .04), 0 8px 24px rgba(24, 24, 27, .06);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #09090b;
+    --surface: #18181b;
+    --sunken: #131316;
+    --border: #27272a;
+    --text: #fafafa;
+    --text-2: #a1a1aa;
+    --muted: #71717a;
+    --accent: #60a5fa;
+    --accent-hover: #93c5fd;
+    --accent-soft: #11203f;
+    --accent-border: #1e3a8a;
+    --accent-fg: #09090b;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px rgba(0, 0, 0, .35);
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #09090b; --surface: #18181b; --sunken: #131316; --border: #27272a;
+  --text: #fafafa; --text-2: #a1a1aa; --muted: #71717a;
+  --accent: #60a5fa; --accent-hover: #93c5fd;
+  --accent-soft: #11203f; --accent-border: #1e3a8a; --accent-fg: #09090b;
+  --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.35);
+}
+:root[data-theme="light"] {
+  --bg: #f4f4f6; --surface: #ffffff; --sunken: #f0f0f2; --border: #e4e4e7;
+  --text: #18181b; --text-2: #71717a; --muted: #a1a1aa;
+  --accent: #2563eb; --accent-hover: #1d4ed8;
+  --accent-soft: #eff6ff; --accent-border: #bfdbfe; --accent-fg: #ffffff;
+  --shadow: 0 1px 2px rgba(24,24,27,.04), 0 8px 24px rgba(24,24,27,.06);
+}
+
+/* ---------- base ---------- */
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.65 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 100%; height: auto; }
+
+.wrap { max-width: 940px; margin: 0 auto; padding: 0 20px; }
+
+/* ---------- shared footer ---------- */
+footer {
+  border-top: 1px solid var(--border); padding: 36px 0 56px;
+  font-size: 14px; color: var(--muted); text-align: center;
+}
+footer nav { margin-bottom: 14px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+footer p { color: var(--muted); font-size: 13px; margin: 6px 0 0; }
+
+/* ---------- policy / document pages ---------- */
+.doc-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+.doc-header .bar {
+  max-width: 760px; margin: 0 auto; padding: 16px 24px;
+  display: flex; align-items: center; gap: 12px;
+}
+.doc-header .brand {
+  display: inline-flex; align-items: center; gap: 10px; font-weight: 600;
+  color: var(--text); letter-spacing: -.01em;
+}
+.doc-header .brand:hover { text-decoration: none; }
+.doc-header .brand img { width: 28px; height: 28px; border-radius: 8px; }
+.doc-header nav { margin-left: auto; display: flex; gap: 18px; font-size: 14px; flex-wrap: wrap; }
+.doc-header nav a { color: var(--text-2); }
+.doc-header nav a:hover { color: var(--accent); text-decoration: none; }
+
+.doc {
+  max-width: 760px; margin: 0 auto; padding: 48px 24px 8px;
+}
+.doc h1 {
+  font-size: clamp(30px, 5vw, 40px); font-weight: 700; letter-spacing: -.03em;
+  line-height: 1.1; margin: 0;
+}
+.doc .updated {
+  color: var(--muted); font-size: 14px; margin: 10px 0 0;
+}
+.doc .intro {
+  font-size: 17px; color: var(--text); margin: 22px 0 0; line-height: 1.6;
+}
+.doc h2 {
+  font-size: 20px; font-weight: 650; letter-spacing: -.01em; color: var(--text);
+  margin: 40px 0 12px; padding-top: 22px; border-top: 1px solid var(--border);
+}
+.doc p { color: var(--text-2); margin: 0 0 15px; }
+.doc ul { margin: 0 0 16px; padding-left: 22px; color: var(--text-2); }
+.doc li { margin-bottom: 8px; }
+.doc li::marker { color: var(--muted); }
+.doc a { color: var(--accent); }
+.doc strong { color: var(--text); font-weight: 600; }
+
+/* Callout used for contact / how-to blocks (replaces the .md fenced code). */
+.doc .note {
+  background: var(--sunken); border: 1px solid var(--border);
+  border-radius: 12px; padding: 16px 18px; margin: 0 0 16px;
+  font-size: 14.5px; color: var(--text-2);
+}
+.doc .note strong { color: var(--text); }
+
+.doc-foot {
+  max-width: 760px; margin: 40px auto 0; padding: 0 24px;
+}
