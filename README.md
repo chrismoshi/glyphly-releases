@@ -100,7 +100,7 @@ review history stays yours.
 
 - Unlimited saved words
 - Clipboard watch — look up text as you copy it
-- Sentence quiz
+- Collection quiz
 
 *In development, included with Pro when it ships:* file import, for studying
 text files and documents you already have.

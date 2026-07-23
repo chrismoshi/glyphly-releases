@@ -5,6 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Glyphly — screen OCR and vocabulary learning for CJK learners</title>
 <meta name="description" content="Glyphly is a local-first desktop app for Chinese, Japanese, and Korean learners. Capture text from your screen, read it with on-device OCR, look up words, save vocabulary, and review with spaced repetition. Windows and Mandarin available today.">
+<meta name="author" content="Glyphly">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#f4f4f6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#09090b" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://chrismoshi.github.io/glyphly-releases/">
 <link rel="icon" href="assets/favicon.png" type="image/png">
 <meta property="og:title" content="Glyphly — screen OCR for CJK learners">
 <meta property="og:description" content="Turn the text on your screen into language learning. Local-first, on-device OCR, spaced-repetition review. Windows and Mandarin available today.">
@@ -13,11 +18,34 @@
 <meta property="og:image" content="https://chrismoshi.github.io/glyphly-releases/assets/social-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Glyphly — turn the text on your screen into language learning.">
 <meta property="og:site_name" content="Glyphly">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Glyphly — screen OCR for CJK learners">
 <meta name="twitter:description" content="Turn the text on your screen into language learning. Local-first, on-device OCR, spaced-repetition review. Windows and Mandarin available today.">
 <meta name="twitter:image" content="https://chrismoshi.github.io/glyphly-releases/assets/social-card.png">
+<meta name="twitter:image:alt" content="Glyphly — turn the text on your screen into language learning.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Glyphly",
+  "description": "Local-first Windows desktop app for CJK learners. Capture text from your screen, read it with on-device OCR, look up words, save vocabulary, and review with spaced repetition.",
+  "url": "https://chrismoshi.github.io/glyphly-releases/",
+  "image": "https://chrismoshi.github.io/glyphly-releases/assets/social-card.png",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "Windows 10, Windows 11",
+  "downloadUrl": "https://github.com/chrismoshi/glyphly-releases/releases/latest",
+  "inLanguage": "en",
+  "author": { "@type": "Organization", "name": "Glyphly" },
+  "offers": [
+    { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "CAD", "description": "Full core loop with up to 150 saved words." },
+    { "@type": "Offer", "name": "Glyphly Pro — Founder Lifetime", "price": "89.99", "priceCurrency": "CAD", "category": "one-time" },
+    { "@type": "Offer", "name": "Glyphly Pro — Yearly", "price": "49.99", "priceCurrency": "CAD", "category": "subscription" },
+    { "@type": "Offer", "name": "Glyphly Pro — Monthly", "price": "8.99", "priceCurrency": "CAD", "category": "subscription" }
+  ]
+}
+</script>
 <link rel="stylesheet" href="assets/site.css">
 <style>
   /* Tokens, base reset, .wrap and footer live in assets/site.css. */
@@ -243,7 +271,7 @@
         <ul class="checks">
           <li>Unlimited saved words</li>
           <li>Clipboard watch</li>
-          <li>Sentence quiz</li>
+          <li>Collection quiz</li>
         </ul>
         <p style="font-size:14px;margin:0;">
           File import <span class="soon">In development</span><br>

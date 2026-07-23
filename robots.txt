@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://chrismoshi.github.io/glyphly-releases/sitemap.xml
