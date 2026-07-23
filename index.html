@@ -10,45 +10,62 @@
 <meta property="og:description" content="Turn the text on your screen into language learning. Local-first, on-device OCR, spaced-repetition review. Windows and Mandarin available today.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://chrismoshi.github.io/glyphly-releases/">
-<meta property="og:image" content="https://chrismoshi.github.io/glyphly-releases/assets/glyphly.png">
+<meta property="og:image" content="https://chrismoshi.github.io/glyphly-releases/assets/social-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Glyphly">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Glyphly — screen OCR for CJK learners">
+<meta name="twitter:description" content="Turn the text on your screen into language learning. Local-first, on-device OCR, spaced-repetition review. Windows and Mandarin available today.">
+<meta name="twitter:image" content="https://chrismoshi.github.io/glyphly-releases/assets/social-card.png">
 <style>
+  /* Palette mirrors the app's design tokens (apps/desktop/src/index.css):
+     zinc neutrals + #2563eb accent, so the site, the icon, and the app agree. */
   :root {
-    --bg: #fbfaf9;
+    --bg: #f4f4f6;
     --surface: #ffffff;
-    --sunken: #f4f2f0;
-    --border: #e5e1dd;
-    --text: #1c1917;
-    --text-2: #57534e;
-    --muted: #8a827b;
-    --accent: #b4451f;
-    --accent-soft: #fdf1eb;
-    --shadow: 0 1px 2px rgba(28, 25, 23, .05), 0 8px 24px rgba(28, 25, 23, .05);
+    --sunken: #f0f0f2;
+    --border: #e4e4e7;
+    --text: #18181b;
+    --text-2: #71717a;
+    --muted: #a1a1aa;
+    --accent: #2563eb;
+    --accent-hover: #1d4ed8;
+    --accent-soft: #eff6ff;
+    --accent-border: #bfdbfe;
+    --accent-fg: #ffffff;
+    --shadow: 0 1px 2px rgba(24, 24, 27, .04), 0 8px 24px rgba(24, 24, 27, .06);
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #16140f;
-      --surface: #201d18;
-      --sunken: #1a1712;
-      --border: #332e27;
-      --text: #f5f1ec;
-      --text-2: #b8b0a6;
-      --muted: #877f75;
-      --accent: #f08b5c;
-      --accent-soft: #2b1d15;
-      --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .25);
+      --bg: #09090b;
+      --surface: #18181b;
+      --sunken: #131316;
+      --border: #27272a;
+      --text: #fafafa;
+      --text-2: #a1a1aa;
+      --muted: #71717a;
+      --accent: #60a5fa;
+      --accent-hover: #93c5fd;
+      --accent-soft: #11203f;
+      --accent-border: #1e3a8a;
+      --accent-fg: #09090b;
+      --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px rgba(0, 0, 0, .35);
     }
   }
   :root[data-theme="dark"] {
-    --bg: #16140f; --surface: #201d18; --sunken: #1a1712; --border: #332e27;
-    --text: #f5f1ec; --text-2: #b8b0a6; --muted: #877f75;
-    --accent: #f08b5c; --accent-soft: #2b1d15;
-    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25);
+    --bg: #09090b; --surface: #18181b; --sunken: #131316; --border: #27272a;
+    --text: #fafafa; --text-2: #a1a1aa; --muted: #71717a;
+    --accent: #60a5fa; --accent-hover: #93c5fd;
+    --accent-soft: #11203f; --accent-border: #1e3a8a; --accent-fg: #09090b;
+    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.35);
   }
   :root[data-theme="light"] {
-    --bg: #fbfaf9; --surface: #ffffff; --sunken: #f4f2f0; --border: #e5e1dd;
-    --text: #1c1917; --text-2: #57534e; --muted: #8a827b;
-    --accent: #b4451f; --accent-soft: #fdf1eb;
-    --shadow: 0 1px 2px rgba(28,25,23,.05), 0 8px 24px rgba(28,25,23,.05);
+    --bg: #f4f4f6; --surface: #ffffff; --sunken: #f0f0f2; --border: #e4e4e7;
+    --text: #18181b; --text-2: #71717a; --muted: #a1a1aa;
+    --accent: #2563eb; --accent-hover: #1d4ed8;
+    --accent-soft: #eff6ff; --accent-border: #bfdbfe; --accent-fg: #ffffff;
+    --shadow: 0 1px 2px rgba(24,24,27,.04), 0 8px 24px rgba(24,24,27,.06);
   }
 
   * { box-sizing: border-box; }
@@ -104,8 +121,8 @@
     border-radius: 10px; border: 1px solid transparent; transition: opacity .15s, background .15s;
   }
   .btn:hover { text-decoration: none; }
-  .btn-primary { background: var(--accent); color: #fff; box-shadow: var(--shadow); }
-  .btn-primary:hover { opacity: .9; }
+  .btn-primary { background: var(--accent); color: var(--accent-fg); box-shadow: var(--shadow); }
+  .btn-primary:hover { background: var(--accent-hover); }
   .btn-ghost { background: var(--surface); color: var(--text); border-color: var(--border); }
   .btn-ghost:hover { background: var(--sunken); }
   .cta-note { font-size: 13.5px; color: var(--muted); margin: 16px 0 0; }
@@ -117,8 +134,8 @@
   .avail strong { color: var(--text); }
   .soon {
     display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: .04em;
-    text-transform: uppercase; color: var(--accent); background: var(--accent-soft);
-    border: 1px solid var(--border); border-radius: 999px; padding: 1px 8px;
+    text-transform: uppercase; color: var(--accent-hover); background: var(--accent-soft);
+    border: 1px solid var(--accent-border); border-radius: 999px; padding: 1px 8px;
     margin-left: 6px; vertical-align: 1px;
   }
 
@@ -136,10 +153,10 @@
 
   /* ---------- privacy strip ---------- */
   .strip {
-    background: var(--accent-soft); border: 1px solid var(--border);
+    background: var(--accent-soft); border: 1px solid var(--accent-border);
     border-radius: 16px; padding: 30px 32px;
   }
-  .strip h2 { color: var(--accent); }
+  .strip h2 { color: var(--accent-hover); } /* small caps on tint: needs the stronger step for AA */
   .strip ul { margin: 0; padding-left: 20px; color: var(--text-2); font-size: 15px; }
   .strip li { margin-bottom: 8px; }
   .strip li:last-child { margin-bottom: 0; }
@@ -152,7 +169,7 @@
   }
   .plan.featured { border-color: var(--accent); }
   .plan .tag {
-    position: absolute; top: -10px; left: 24px; background: var(--accent); color: #fff;
+    position: absolute; top: -10px; left: 24px; background: var(--accent); color: var(--accent-fg);
     font-size: 11px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase;
     padding: 3px 10px; border-radius: 999px;
   }
@@ -221,7 +238,10 @@
       <a class="btn btn-primary" href="https://github.com/chrismoshi/glyphly-releases/releases/latest">Download for Windows</a>
       <a class="btn btn-ghost" href="#pricing">See pricing</a>
     </div>
-    <p class="cta-note">Free to use with up to 150 saved words. No account required.</p>
+    <p class="cta-note">
+      Free to use with up to 150 saved words. No account required.<br>
+      <a href="https://github.com/chrismoshi/glyphly-releases/releases/latest">See the latest release and what's new →</a>
+    </p>
   </header>
 
   <section id="how">
