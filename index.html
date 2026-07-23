@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Glyphly — Mandarin screen OCR and vocabulary learning for Windows</title>
-<meta name="description" content="Glyphly is a local-first Windows app for Mandarin learners. Capture text from your screen, read it with on-device OCR, look up words, save vocabulary, and review with spaced repetition.">
+<title>Glyphly — screen OCR and vocabulary learning for CJK learners</title>
+<meta name="description" content="Glyphly is a local-first desktop app for Chinese, Japanese, and Korean learners. Capture text from your screen, read it with on-device OCR, look up words, save vocabulary, and review with spaced repetition. Windows and Mandarin available today.">
 <link rel="icon" href="assets/favicon.png" type="image/png">
-<meta property="og:title" content="Glyphly — Mandarin screen OCR for Windows">
-<meta property="og:description" content="Turn Mandarin text on your screen into language learning. Local-first, on-device OCR, spaced-repetition review.">
+<meta property="og:title" content="Glyphly — screen OCR for CJK learners">
+<meta property="og:description" content="Turn the text on your screen into language learning. Local-first, on-device OCR, spaced-repetition review. Windows and Mandarin available today.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://chrismoshi.github.io/glyphly-releases/">
 <meta property="og:image" content="https://chrismoshi.github.io/glyphly-releases/assets/glyphly.png">
@@ -109,6 +109,18 @@
   .btn-ghost { background: var(--surface); color: var(--text); border-color: var(--border); }
   .btn-ghost:hover { background: var(--sunken); }
   .cta-note { font-size: 13.5px; color: var(--muted); margin: 16px 0 0; }
+  .avail {
+    font-size: 14px; color: var(--text-2); margin: 20px auto 0; max-width: 52ch;
+    background: var(--sunken); border: 1px solid var(--border);
+    border-radius: 10px; padding: 12px 18px;
+  }
+  .avail strong { color: var(--text); }
+  .soon {
+    display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: .04em;
+    text-transform: uppercase; color: var(--accent); background: var(--accent-soft);
+    border: 1px solid var(--border); border-radius: 999px; padding: 1px 8px;
+    margin-left: 6px; vertical-align: 1px;
+  }
 
   /* ---------- feature grid ---------- */
   .grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
@@ -189,8 +201,9 @@
   <header class="hero">
     <img class="logo" src="assets/glyphly.png" alt="Glyphly">
     <h1>Glyphly</h1>
-    <p class="tagline">Turn Mandarin text on your screen into language learning.</p>
+    <p class="tagline">Turn the text on your screen into language learning.</p>
     <p class="sub">
+      A local-first desktop app for CJK learners — Chinese, Japanese, and Korean.
       Capture text from your screen, read it with on-device OCR, look up words
       instantly, save vocabulary, and review what you learn — all on your own PC.
     </p>
@@ -200,6 +213,10 @@
       <span class="badge">Local-first</span>
       <span class="badge">Free to try</span>
     </div>
+    <p class="avail">
+      <strong>Available today:</strong> Windows, Mandarin Chinese. Japanese,
+      Korean, and macOS are <a href="#platforms">in development</a>.
+    </p>
     <div class="cta">
       <a class="btn btn-primary" href="https://github.com/chrismoshi/glyphly-releases/releases/latest">Download for Windows</a>
       <a class="btn btn-ghost" href="#pricing">See pricing</a>
@@ -213,14 +230,14 @@
       <div class="card">
         <div class="step">1 · Capture</div>
         <h3>Select what you're reading</h3>
-        <p>Drag a region or press a global hotkey to grab Mandarin text from
-           study PDFs, reading apps, websites, or your own materials.</p>
+        <p>Drag a region or press a global hotkey to grab text from study PDFs,
+           reading apps, websites, or your own materials.</p>
       </div>
       <div class="card">
         <div class="step">2 · Understand</div>
         <h3>Read it, word by word</h3>
         <p>On-device OCR recognises the characters and splits the line into
-           words, with pinyin and definitions for each one.</p>
+           words, with definitions and pronunciation for each one.</p>
       </div>
       <div class="card">
         <div class="step">3 · Save</div>
@@ -273,9 +290,12 @@
         <ul class="checks">
           <li>Unlimited saved words</li>
           <li>Clipboard watch</li>
-          <li>File import</li>
           <li>Sentence quiz</li>
         </ul>
+        <p style="font-size:14px;margin:0;">
+          File import <span class="soon">In development</span><br>
+          Included with Pro when it ships.
+        </p>
       </div>
     </div>
 
@@ -283,17 +303,17 @@
       <div class="plan featured">
         <span class="tag">Launch offer</span>
         <div class="name">Founder Lifetime</div>
-        <div class="price">$89.99</div>
+        <div class="price">CA$89.99</div>
         <p class="note">One-time payment. Limited early-supporter offer.</p>
       </div>
       <div class="plan">
         <div class="name">Yearly</div>
-        <div class="price">$49.99 <span>/ year</span></div>
+        <div class="price">CA$49.99 <span>/ year</span></div>
         <p class="note">Best value if you're subscribing.</p>
       </div>
       <div class="plan">
         <div class="name">Monthly</div>
-        <div class="price">$8.99 <span>/ month</span></div>
+        <div class="price">CA$8.99 <span>/ month</span></div>
         <p class="note">Cancel any time.</p>
       </div>
     </div>
@@ -303,12 +323,46 @@
       <strong>Settings&nbsp;→&nbsp;License</strong> to choose a plan. Your license
       key arrives by email — paste it into that same card and press Activate. One
       key works on up to 3 devices, and Pro stays unlocked for 14 days offline.
-      Prices in USD; payments processed by Lemon Squeezy, our merchant of record.
+      Prices in Canadian dollars (CAD); payments processed by Lemon Squeezy, our
+      merchant of record, who will show your local equivalent at checkout.
+    </div>
+  </section>
+
+  <section id="platforms">
+    <h2>Platforms &amp; languages</h2>
+    <table class="specs">
+      <tr>
+        <th>Platform — available now</th>
+        <td>Windows 10 and Windows 11 (64-bit)</td>
+      </tr>
+      <tr>
+        <th>Platform — in development</th>
+        <td>macOS</td>
+      </tr>
+      <tr>
+        <th>Learning language — available now</th>
+        <td>Mandarin Chinese</td>
+      </tr>
+      <tr>
+        <th>Learning language — in development</th>
+        <td>Japanese, Korean</td>
+      </tr>
+      <tr>
+        <th>Explanation language</th>
+        <td>English, French, German, Spanish, or Portuguese</td>
+      </tr>
+    </table>
+    <div class="callout">
+      Anything listed as in development is on the roadmap without a committed
+      date. Each language needs its own dictionary and text-analysis work, and
+      each platform needs its own build and testing — they ship when they are
+      genuinely good rather than on a schedule.
+      <strong>Please buy based on what Glyphly does today.</strong>
     </div>
   </section>
 
   <section id="requirements">
-    <h2>Requirements &amp; languages</h2>
+    <h2>System requirements</h2>
     <table class="specs">
       <tr>
         <th>Operating system</th>
@@ -326,15 +380,6 @@
       <tr>
         <th>Internet</th>
         <td>Needed for setup, updates, and license activation only</td>
-      </tr>
-      <tr>
-        <th>Learning language</th>
-        <td>Mandarin Chinese. Japanese and Korean are planned, without a
-            committed date.</td>
-      </tr>
-      <tr>
-        <th>Explanation language</th>
-        <td>English, French, German, Spanish, or Portuguese</td>
       </tr>
       <tr>
         <th>Updates</th>

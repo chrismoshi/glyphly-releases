@@ -4,7 +4,7 @@
 
 <h1 align="center">Glyphly</h1>
 
-<p align="center"><strong>Turn Mandarin text on your screen into language learning.</strong></p>
+<p align="center"><strong>Turn the text on your screen into language learning.</strong></p>
 
 <p align="center">
   <a href="https://github.com/chrismoshi/glyphly-releases/releases/latest"><strong>Download for Windows</strong></a>
@@ -20,24 +20,29 @@
 
 ---
 
-Glyphly is a local-first Windows desktop app for Mandarin learners. Capture text
-from your screen, read it with on-device OCR, look up words instantly, save
-vocabulary, and review what you learn.
+Glyphly is a local-first desktop app for CJK learners — Chinese, Japanese, and
+Korean. Capture text from your screen, read it with on-device OCR, look up words
+instantly, save vocabulary, and review what you learn.
 
-It is built for learners who study from the Mandarin text already in front of
-them — study PDFs, reading apps, websites, and their own learning materials —
-rather than from a fixed course deck.
+It is built for learners who study from the text already in front of them —
+study PDFs, reading apps, websites, and their own learning materials — rather
+than from a fixed course deck.
 
-**Windows · Mandarin Chinese · Free to try**
+> **Available today: Windows, Mandarin Chinese.**
+> Japanese and Korean are in development, as is a macOS build. See
+> [Platforms and languages](#platforms-and-languages) for what ships now.
+
+**Free to try · No account required**
 
 ---
 
 ## What Glyphly does
 
-- **Capture** Mandarin text from screen content you have access to, with a
-  region selection or a global hotkey.
+- **Capture** text from screen content you have access to, with a region
+  selection or a global hotkey.
 - **Read** it with on-device OCR — no screenshot leaves your machine.
-- **Look up** words as you go: pinyin, definitions, and word segmentation.
+- **Look up** words as you go: definitions, word segmentation, and pronunciation
+  (pinyin for Mandarin).
 - **Save** words and their sentence context to a personal lexicon.
 - **Review** what you saved with spaced repetition (FSRS scheduling).
 - **Translate** whole sentences with DeepL — optional, and only if you add
@@ -94,17 +99,20 @@ review history stays yours.
 **Pro removes the cap and adds study tools:**
 
 - Unlimited saved words
-- Clipboard watch — look up Mandarin text as you copy it
-- File import — bring in text files to study
+- Clipboard watch — look up text as you copy it
 - Sentence quiz
+
+*In development, included with Pro when it ships:* file import, for studying
+text files and documents you already have.
 
 | Plan | Price |
 |------|-------|
-| **Founder Lifetime** — limited launch offer | **$89.99** one-time |
-| **Yearly** | **$49.99 / year** |
-| **Monthly** | **$8.99 / month** |
+| **Founder Lifetime** — limited launch offer | **CA$89.99** one-time |
+| **Yearly** | **CA$49.99 / year** |
+| **Monthly** | **CA$8.99 / month** |
 
-Prices in USD. Payments are processed by Lemon Squeezy, our merchant of record.
+Prices in Canadian dollars (CAD). Payments are processed by Lemon Squeezy, our
+merchant of record, who will show your local equivalent at checkout.
 
 **How to buy and activate:** open Glyphly, go to **Settings → License**, and
 choose a plan. After purchase you receive a license key by email — paste it into
@@ -120,6 +128,23 @@ may carry fair-use limits.
 
 ---
 
+## Platforms and languages
+
+| | Available now | In development |
+|---|---|---|
+| **Platform** | Windows 10 and 11 (64-bit) | macOS |
+| **Learning language** | Mandarin Chinese | Japanese, Korean |
+
+Items listed as in development are on the roadmap without a committed date. Each
+language needs its own dictionary and text-analysis work, and each platform
+needs its own build and testing — they ship when they are genuinely good rather
+than on a schedule. Please buy based on what Glyphly does today.
+
+Explanations and translations can target English, French, German, Spanish, or
+Portuguese.
+
+---
+
 ## System requirements
 
 - Windows 10 or Windows 11 (64-bit)
@@ -127,26 +152,6 @@ may carry fair-use limits.
   unpacks locally)
 - An internet connection for first-time setup, updates, and license activation
 - Core capture, lookup, and review work offline once setup is complete
-
----
-
-## Language support
-
-**Available now**
-
-- Mandarin Chinese
-
-**Planned**
-
-- Japanese
-- Korean
-
-Planned languages are on the roadmap without a committed date. Each one needs
-its own dictionary and text-analysis work, so they ship when they are genuinely
-good rather than on a schedule.
-
-Explanations and translations can target English, French, German, Spanish, or
-Portuguese.
 
 ---
 

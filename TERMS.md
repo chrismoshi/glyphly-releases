@@ -6,9 +6,13 @@ By downloading or using Glyphly, you agree to these terms.
 
 ## The product
 
-Glyphly is a Windows desktop app for Mandarin language learning. It helps you
-capture text from your screen, run on-device OCR, look up words, save
-vocabulary, and review what you learn.
+Glyphly is a desktop app for CJK language learning (Chinese, Japanese, and
+Korean). It helps you capture text from your screen, run on-device OCR, look up
+words, save vocabulary, and review what you learn.
+
+Supported platforms and languages change between versions. Whatever is listed as
+available on the product page at the time of your purchase is what you are
+buying; anything described as planned or in development is not guaranteed.
 
 ## Personal study use
 
