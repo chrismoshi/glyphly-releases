@@ -1,0 +1,16 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Billing, license, or refund question
+    url: https://github.com/chrismoshi/glyphly-releases/blob/main/REFUND.md
+    about: >-
+      Purchases are handled by Lemon Squeezy. Use the customer portal link in
+      your receipt email. Please do not post license keys, order numbers, or
+      your purchase email in a public issue.
+  - name: Privacy question
+    url: https://github.com/chrismoshi/glyphly-releases/blob/main/PRIVACY.md
+    about: >-
+      What Glyphly stores on your device, what stays local, and what the
+      optional cloud features send.
+  - name: Downloads and release notes
+    url: https://github.com/chrismoshi/glyphly-releases/releases/latest
+    about: The latest installer, and what changed in each version.

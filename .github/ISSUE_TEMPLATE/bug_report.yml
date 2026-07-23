@@ -1,0 +1,101 @@
+name: Bug report
+description: Something in Glyphly is broken or behaves unexpectedly.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report this.
+
+        **Please don't include your license key, order number, or purchase
+        email** — this tracker is public. For anything billing-related, use the
+        customer portal link in your receipt email instead.
+
+  - type: input
+    id: version
+    attributes:
+      label: Glyphly version
+      description: Open Glyphly → Settings → Application. It reads "Current version …".
+      placeholder: "0.3.0"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: Windows version
+      options:
+        - Windows 11
+        - Windows 10
+        - Other / not sure
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: What part of the app?
+      options:
+        - First-run setup / language engine download
+        - Screen capture
+        - OCR / text recognition
+        - Word lookup and definitions
+        - Saving to the lexicon
+        - Review / spaced repetition
+        - Reader
+        - Sentence translation (DeepL)
+        - License activation / Pro features
+        - Updating the app
+        - Something else
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What went wrong, and what did you expect instead?
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: What you did, in order, so it can be reproduced here.
+      placeholder: |
+        1. Opened Glyphly and pressed Ctrl Shift S
+        2. Selected a region of a PDF
+        3. …
+    validations:
+      required: true
+
+  - type: dropdown
+    id: frequency
+    attributes:
+      label: How often does it happen?
+      options:
+        - Every time
+        - Most of the time
+        - Occasionally
+        - It happened once
+    validations:
+      required: true
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Screenshots or anything else
+      description: >-
+        A screenshot of the problem helps a lot. If it involves captured text,
+        please include only text you're comfortable sharing publicly.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I'm on the latest version, or I've noted my version above.
+          required: true
+        - label: This report contains no license key, order number, or purchase email.
+          required: true

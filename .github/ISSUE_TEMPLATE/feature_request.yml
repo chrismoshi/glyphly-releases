@@ -1,0 +1,55 @@
+name: Feature request
+description: Suggest an improvement or something new for Glyphly.
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Ideas are welcome. The most useful requests describe the studying
+        problem you're hitting, not just the feature — that often leads to a
+        better solution than the one first imagined.
+
+        Japanese, Korean, and a macOS build are already planned. You're welcome
+        to add a note about how you'd use them, but no need to request them.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What are you trying to do?
+      description: >-
+        Describe the situation while you're studying where Glyphly gets in the
+        way or falls short.
+    validations:
+      required: true
+
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would help?
+      description: Your idea for how it could work. Rough is fine.
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: What part of the app would this affect?
+      options:
+        - Screen capture
+        - OCR / text recognition
+        - Word lookup and definitions
+        - The lexicon / saved words
+        - Review / spaced repetition
+        - Reader
+        - Translation
+        - Import and export
+        - Settings and setup
+        - Something else / not sure
+    validations:
+      required: true
+
+  - type: textarea
+    id: workaround
+    attributes:
+      label: How do you handle it today?
+      description: >-
+        Any workaround you use now, in Glyphly or another tool. This helps
+        gauge how much the gap costs you.
