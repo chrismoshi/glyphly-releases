@@ -204,11 +204,48 @@
   }
   #lightbox .x:hover { background: rgba(255, 255, 255, .22); }
 
+  /* ---------- top nav ---------- */
+  html { scroll-padding-top: 64px; }
+  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+  .topnav {
+    position: sticky; top: 0; z-index: 50;
+    background: var(--bg); border-bottom: 1px solid var(--border);
+  }
+  .topnav .row {
+    max-width: 940px; margin: 0 auto; padding: 10px 20px;
+    display: flex; align-items: center; gap: 18px;
+  }
+  .topnav .brand {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-weight: 700; letter-spacing: -.02em; color: var(--text);
+  }
+  .topnav .brand:hover { text-decoration: none; }
+  .topnav .brand img { width: 24px; height: 24px; border-radius: 6px; }
+  .topnav .links { margin-left: auto; display: flex; align-items: center; gap: 20px; }
+  .topnav .links a { font-size: 14px; color: var(--text-2); }
+  .topnav .links a:hover { color: var(--accent); text-decoration: none; }
+  .topnav .links .btn { padding: 7px 16px; font-size: 14px; color: var(--accent-fg); }
+  .topnav .links .btn:hover { color: var(--accent-fg); }
+  @media (max-width: 560px) { .topnav .links a.nav-anchor { display: none; } }
+
 </style>
 </head>
 <body>
 
-<div class="wrap">
+<nav class="topnav">
+  <div class="row">
+    <a class="brand" href="#top"><img src="assets/glyphly.png" alt="">Glyphly</a>
+    <div class="links">
+      <a class="nav-anchor" href="#how">How it works</a>
+      <a class="nav-anchor" href="#screenshots">Screenshots</a>
+      <a class="nav-anchor" href="#pricing">Pricing</a>
+      <a href="faq.html">FAQ</a>
+      <a class="btn btn-primary" href="https://github.com/chrismoshi/glyphly-releases/releases/latest">Download</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap" id="top">
 
   <header class="hero">
     <img class="logo" src="assets/glyphly.png" alt="Glyphly">
@@ -442,6 +479,8 @@
 
   <section id="support">
     <h2>Support</h2>
+    <p>Have a question first? The <a href="faq.html">FAQ</a> covers setup, the
+       Windows security prompt, privacy, and how Pro works.</p>
     <p>Found a bug, or something not working the way this page describes? Open an
        entry on the
        <a href="https://github.com/chrismoshi/glyphly-releases/issues">issue tracker</a>
@@ -456,6 +495,7 @@
   <div class="wrap">
     <nav>
       <a href="https://github.com/chrismoshi/glyphly-releases/releases/latest">Download</a>
+      <a href="faq.html">FAQ</a>
       <a href="privacy.html">Privacy</a>
       <a href="terms.html">Terms</a>
       <a href="refund.html">Refunds</a>

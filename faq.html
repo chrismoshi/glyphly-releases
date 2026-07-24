@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FAQ — Glyphly</title>
+<meta name="description" content="Answers about Glyphly: privacy and offline use, the Windows security prompt, free vs Pro, license activation, DeepL translation, languages, and refunds.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://chrismoshi.github.io/glyphly-releases/faq.html">
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<link rel="stylesheet" href="assets/site.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"What is Glyphly?","acceptedAnswer":{"@type":"Answer","text":"Glyphly is a local-first Windows desktop app for CJK learners. You capture text from your screen, read it with on-device OCR, look up words, save vocabulary, and review with spaced repetition. Mandarin Chinese is available today; Japanese and Korean are in development."}},
+    {"@type":"Question","name":"Is Glyphly free?","acceptedAnswer":{"@type":"Answer","text":"Yes. The full core loop — capture, OCR, lookup, saving, and review — is free, with a cap of 150 saved words. Words you have already saved are never locked. Glyphly Pro removes the cap and adds clipboard watch and the collection quiz; file import is in development."}},
+    {"@type":"Question","name":"Which languages does Glyphly support?","acceptedAnswer":{"@type":"Answer","text":"You can learn Mandarin Chinese today. Japanese and Korean are planned, without a committed date. Explanations and translations can target English, French, German, Spanish, or Portuguese."}},
+    {"@type":"Question","name":"Does my screen content get uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. OCR, word segmentation, and dictionary lookup all run on your device. Screenshots and recognised text are not uploaded for those features. The only feature that sends text off your machine is optional sentence translation, and only when you enable it and only the sentence you asked about."}},
+    {"@type":"Question","name":"Does Glyphly work offline?","acceptedAnswer":{"@type":"Answer","text":"Yes. On first launch Glyphly downloads its language engine once (about 300 MB). After that, capture, lookup, and review work with no internet connection. Updates, license activation, and DeepL translation still need a connection."}},
+    {"@type":"Question","name":"Why does Windows show a \"Windows protected your PC\" warning?","acceptedAnswer":{"@type":"Answer","text":"Glyphly's installer is not yet code-signed, so Windows SmartScreen may warn about it. Choose More info, then Run anyway. Code signing is in progress. Only download Glyphly from the official Releases page."}},
+    {"@type":"Question","name":"What are the system requirements?","acceptedAnswer":{"@type":"Answer","text":"Windows 10 or Windows 11 (64-bit), at least 1 GB free disk space, and an internet connection for first-time setup, updates, and license activation. The language engine is a one-time download of about 300 MB."}},
+    {"@type":"Question","name":"What does Glyphly Pro unlock?","acceptedAnswer":{"@type":"Answer","text":"Unlimited saved words, clipboard watch (look up text as you copy it), and the collection quiz. File import is in development and will be included with Pro when it ships. Plans are Founder Lifetime (one-time), Yearly, and Monthly, in Canadian dollars."}},
+    {"@type":"Question","name":"How do I activate my license?","acceptedAnswer":{"@type":"Answer","text":"After purchase you receive a license key by email. Open Glyphly, go to Settings, then the License card, paste your key, and press Activate. One key works on up to 3 devices, and Pro stays unlocked for 14 days offline."}},
+    {"@type":"Question","name":"How do I turn on sentence translation?","acceptedAnswer":{"@type":"Answer","text":"Sentence translation uses DeepL and is off by default. Get a free API key from DeepL, then in Glyphly open Settings, the Translation card, paste your key, and save. Translation then works with your own key at no extra cost from us. Without a key, no text is ever sent to DeepL."}},
+    {"@type":"Question","name":"I found a bug or need help. What do I do?","acceptedAnswer":{"@type":"Answer","text":"Open an entry on the GitHub issue tracker for the releases repository. Please include your Glyphly version (Settings, then Application) and your Windows version."}},
+    {"@type":"Question","name":"How do refunds work?","acceptedAnswer":{"@type":"Answer","text":"Purchases are handled by Lemon Squeezy, our merchant of record. If Glyphly does not work as described, you can request a refund within 14 days using the customer portal link in your receipt email. See the Refund Policy for details."}}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="doc-header">
+  <div class="bar">
+    <a class="brand" href="index.html"><img src="assets/glyphly.png" alt="">Glyphly</a>
+    <nav>
+      <a href="index.html">← Product page</a>
+      <a href="faq.html">FAQ</a>
+      <a href="https://github.com/chrismoshi/glyphly-releases/releases/latest">Download</a>
+      <a href="https://github.com/chrismoshi/glyphly-releases">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main class="doc">
+  <h1>Frequently asked questions</h1>
+  <p class="lead">
+    Short answers to the things people ask before and after installing Glyphly.
+    Still stuck? Open an issue on the
+    <a href="https://github.com/chrismoshi/glyphly-releases/issues">issue tracker</a>.
+  </p>
+
+  <h2>About Glyphly</h2>
+  <div class="faq">
+    <details>
+      <summary>What is Glyphly?</summary>
+      <div class="a"><p>A local-first Windows desktop app for CJK learners. You capture text from
+        your screen, read it with on-device OCR, look up words, save vocabulary, and review with
+        spaced repetition. Mandarin Chinese is available today; Japanese and Korean are in
+        development.</p></div>
+    </details>
+    <details>
+      <summary>Is Glyphly free?</summary>
+      <div class="a"><p>Yes. The full core loop — capture, OCR, lookup, saving, and review — is free,
+        with a cap of <strong>150 saved words</strong>. Words you've already saved are never locked.
+        <a href="index.html#pricing">Glyphly Pro</a> removes the cap and adds clipboard watch and the
+        collection quiz; file import is in development.</p></div>
+    </details>
+    <details>
+      <summary>Which languages does Glyphly support?</summary>
+      <div class="a"><p>You can learn <strong>Mandarin Chinese</strong> today. Japanese and Korean are
+        planned, without a committed date. Explanations and translations can target English, French,
+        German, Spanish, or Portuguese.</p></div>
+    </details>
+  </div>
+
+  <h2>Privacy &amp; offline</h2>
+  <div class="faq">
+    <details>
+      <summary>Does my screen content get uploaded?</summary>
+      <div class="a"><p><strong>No.</strong> OCR, word segmentation, and dictionary lookup all run on
+        your device. Screenshots and recognised text are not uploaded for those features. The only
+        feature that sends text off your machine is optional sentence translation — and only when you
+        enable it, and only the sentence you asked about. Full details in the
+        <a href="privacy.html">Privacy Policy</a>.</p></div>
+    </details>
+    <details>
+      <summary>Does Glyphly work offline?</summary>
+      <div class="a"><p>Yes. On first launch Glyphly downloads its language engine once (about 300 MB).
+        After that, capture, lookup, and review work with no internet connection. Updates, license
+        activation, and DeepL translation still need a connection.</p></div>
+    </details>
+  </div>
+
+  <h2>Installing</h2>
+  <div class="faq">
+    <details>
+      <summary>Why does Windows show a “Windows protected your PC” warning?</summary>
+      <div class="a"><p>Glyphly's installer is not yet code-signed, so Windows SmartScreen may warn
+        about it. Choose <strong>More info → Run anyway</strong>. Code signing is in progress. Only
+        download Glyphly from the official
+        <a href="https://github.com/chrismoshi/glyphly-releases/releases/latest">Releases page</a>.</p></div>
+    </details>
+    <details>
+      <summary>What are the system requirements?</summary>
+      <div class="a"><p>Windows 10 or Windows 11 (64-bit), at least 1 GB free disk space, and an
+        internet connection for first-time setup, updates, and license activation. The language engine
+        is a one-time download of about 300 MB.</p></div>
+    </details>
+  </div>
+
+  <h2>Pro &amp; licensing</h2>
+  <div class="faq">
+    <details>
+      <summary>What does Glyphly Pro unlock?</summary>
+      <div class="a"><p>Unlimited saved words, clipboard watch (look up text as you copy it), and the
+        collection quiz. File import is in development and will be included with Pro when it ships.
+        Plans are Founder Lifetime (one-time), Yearly, and Monthly, in Canadian dollars — see
+        <a href="index.html#pricing">pricing</a>.</p></div>
+    </details>
+    <details>
+      <summary>How do I activate my license?</summary>
+      <div class="a"><p>After purchase you receive a license key by email. Open Glyphly, go to
+        <strong>Settings → License</strong>, paste your key, and press Activate. One key works on up to
+        3 devices, and Pro stays unlocked for 14 days offline.</p></div>
+    </details>
+  </div>
+
+  <h2>Translation</h2>
+  <div class="faq">
+    <details>
+      <summary>How do I turn on sentence translation?</summary>
+      <div class="a">
+        <p>Sentence translation uses DeepL and is <strong>off by default</strong>. It runs on your own
+          DeepL API key, so it costs nothing extra from us.</p>
+        <p>1. Get a free API key from <a href="https://www.deepl.com/pro-api">DeepL's API page</a>.<br>
+           2. In Glyphly, open <strong>Settings → Translation</strong>.<br>
+           3. Paste your key and save.</p>
+        <p>Without a key, no text is ever sent to DeepL and the sentence box is a plain manual-entry
+           field.</p>
+      </div>
+    </details>
+  </div>
+
+  <h2>Support &amp; refunds</h2>
+  <div class="faq">
+    <details>
+      <summary>I found a bug or need help. What do I do?</summary>
+      <div class="a"><p>Open an entry on the
+        <a href="https://github.com/chrismoshi/glyphly-releases/issues">issue tracker</a>. Please
+        include your Glyphly version (Settings → Application) and your Windows version so it's quicker
+        to look into.</p></div>
+    </details>
+    <details>
+      <summary>How do refunds work?</summary>
+      <div class="a"><p>Purchases are handled by Lemon Squeezy, our merchant of record. If Glyphly does
+        not work as described, you can request a refund within 14 days using the customer portal link in
+        your receipt email. See the <a href="refund.html">Refund Policy</a> for what's covered.</p></div>
+    </details>
+  </div>
+</main>
+
+<div class="doc-foot">
+<footer>
+  <div class="wrap">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="faq.html">FAQ</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="refund.html">Refunds</a>
+      <a href="https://github.com/chrismoshi/glyphly-releases">GitHub</a>
+    </nav>
+    <p>Glyphly is a study tool for personal language learning. Use it only with
+       content you have the right to access.</p>
+  </div>
+</footer>
+</div>
+
+</body>
+</html>
