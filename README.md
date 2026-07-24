@@ -85,7 +85,21 @@ The app checks for its own updates and can install them for you.
 
 ## Screenshots
 
-Screenshots coming soon.
+**Capture & understand** — on-device OCR, pinyin, per-word lookup, optional translation.
+
+![Glyphly Capture view: recognised Mandarin text with pinyin, translation, per-word drill-down, and a dictionary lookup.](assets/screenshots/01-capture.png)
+
+**Your personal lexicon** — every saved word, with meanings and the sentence you met it in.
+
+![Glyphly Lexicon: saved words with pinyin, definitions, and example sentences.](assets/screenshots/02-lexicon.png)
+
+**Organised into collections** — group saved sentences however you study.
+
+![Glyphly Library: saved sentences organised into named collections.](assets/screenshots/03-library.png)
+
+**Review with spaced repetition** — FSRS scheduling brings each word back at the right time.
+
+![Glyphly Review: an FSRS spaced-repetition card with meaning, pinyin, and rating buttons.](assets/screenshots/04-review.png)
 
 ---
 
