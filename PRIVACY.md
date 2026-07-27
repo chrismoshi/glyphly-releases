@@ -88,7 +88,7 @@ most recent revision, and the full history is visible in this repository.
 
 ## Contact
 
-Privacy questions can be raised on the
-[issue tracker](https://github.com/chrismoshi/glyphly-releases/issues). A
-dedicated privacy contact address will be published here before it is needed for
-anything that should not be discussed in public.
+For anything that should not be discussed in public, including requests to access
+or delete data, email <privacy@getglyphly.com>. General privacy questions can
+also be raised on the
+[issue tracker](https://github.com/chrismoshi/glyphly-releases/issues).

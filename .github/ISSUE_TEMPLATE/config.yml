@@ -14,3 +14,8 @@ contact_links:
   - name: Downloads and release notes
     url: https://github.com/chrismoshi/glyphly-releases/releases/latest
     about: The latest installer, and what changed in each version.
+  - name: Email support
+    url: mailto:support@getglyphly.com
+    about: >-
+      For anything that should not be public, or if you would rather not use
+      GitHub. Order numbers and license keys belong here, not in an issue.

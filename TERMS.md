@@ -94,5 +94,6 @@ the most recent revision, and the full history is visible in this repository.
 ## Contact
 
 Questions and bug reports can be raised on the
-[issue tracker](https://github.com/chrismoshi/glyphly-releases/issues). Billing
-and refund matters are covered in the [Refund Policy](./REFUND.md).
+[issue tracker](https://github.com/chrismoshi/glyphly-releases/issues), or sent
+to <support@getglyphly.com>. Billing and refund matters are covered in the
+[Refund Policy](./REFUND.md).

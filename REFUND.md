@@ -63,6 +63,9 @@ purchase receipt email, or reply to that receipt, and include:
 - your order number, or your license key;
 - a short description of the problem.
 
+If the receipt is lost, or the portal link no longer works, email
+<support@getglyphly.com> with the details above and it will be sorted out.
+
 If the problem looks like a bug in the app rather than a billing issue, opening
 an entry on the
 [issue tracker](https://github.com/chrismoshi/glyphly-releases/issues) is often

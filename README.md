@@ -9,7 +9,7 @@
 <p align="center">
   <a href="https://github.com/chrismoshi/glyphly-releases/releases/latest"><strong>Download for Windows</strong></a>
   ·
-  <a href="https://chrismoshi.github.io/glyphly-releases/">Product page</a>
+  <a href="https://getglyphly.com/">Product page</a>
   ·
   <a href="./PRIVACY.md">Privacy</a>
   ·
@@ -173,6 +173,10 @@ Portuguese.
 
 Found a bug, or something not working as described? Open an issue on the
 [issue tracker](https://github.com/chrismoshi/glyphly-releases/issues).
+
+Would rather not use GitHub, or have something that shouldn't be public? Email
+<support@getglyphly.com>. Order numbers and license keys belong there, not in a
+public issue.
 
 For billing, license, and refund questions, see the
 [Refund Policy](./REFUND.md).
