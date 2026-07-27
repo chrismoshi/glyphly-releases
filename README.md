@@ -128,9 +128,13 @@ text files and documents you already have.
 Prices in Canadian dollars (CAD). Payments are processed by Lemon Squeezy, our
 merchant of record, who will show your local equivalent at checkout.
 
-**How to buy and activate:** open Glyphly, go to **Settings → License**, and
-choose a plan. After purchase you receive a license key by email — paste it into
-that same card and press **Activate**.
+**Buying isn't open yet.** Glyphly Pro is not on sale while the store completes
+verification, and there is no committed date. The free plan is fully usable
+meanwhile, with its cap of 150 saved words.
+
+When purchasing opens: open Glyphly, go to **Settings → License**, and choose a
+plan. After purchase you receive a license key by email — paste it into that
+same card and press **Activate**.
 
 One key works on up to 3 devices. Glyphly re-checks your license periodically
 and keeps Pro unlocked for 14 days offline, so a flight or a dead connection
